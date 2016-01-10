@@ -1,0 +1,16 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+.region {
+  max-width: 100%;
+  > .wrapper {
+    max-width: $width-region;
+    margin: auto;
+    padding: 0 3%;
+  }
+}

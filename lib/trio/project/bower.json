@@ -1,0 +1,27 @@
+{
+  "name"    : "Name",
+  "version" : "0.0.0",
+  "authors" : [
+  "micalexander <michael@micalexander.com>"
+  ],
+    "description" : "Descritption",
+    "keywords"    : [
+    "wordpress",
+    "theme"
+  ],
+    "license" : "MIT",
+    "private" : false,
+    "ignore"  : [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+    "dependencies" : {
+    "fancybox"     : "~2.1.5",
+    "flexslider"   : "https://github.com/woothemes/FlexSlider/archive/master.zip",
+    "jQuery.mmenu" : "~5.0.4",
+    "jquery"       : ">= 2.1.4"
+  }
+}

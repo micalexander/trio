@@ -1,0 +1,39 @@
+/* IE<9 Overrides */
+
+/* -------------------------------------------------
+** Framework
+** ---------------------------------------------- */
+@import "trio/variables";
+@import "global/variables";
+@import "trio/trio";
+
+/* -------------------------------------------------
+** Variables
+** ---------------------------------------------- */
+@import "variables/*";
+
+/* -------------------------------------------------
+** SASS-y IE Specific
+** ---------------------------------------------- */
+$shadow_alt: #333;
+$pie-behavior: url(trio/PIE.php); // BE SURE TO UPDATE THIS PATH
+
+@mixin shadow-replace {
+  border-bottom: 1px solid $shadow_alt;
+}
+
+
+/* -------------------------------------------------
+** IE<9
+** ---------------------------------------------- */
+.lt-ie9 {
+
+}
+
+/* -------------------------------------------------
+** IE<8
+** ---------------------------------------------- */
+.lt-ie8 {
+  //Hack for IE7 and lower box-sizing
+  * { box-sizing: border-box; *behavior: url(trio/boxsizing.htc); }
+}

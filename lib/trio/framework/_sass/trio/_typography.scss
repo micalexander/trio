@@ -1,0 +1,156 @@
+* {
+	@include selection($color-selection, $color-selection-backgound);
+}
+
+html {
+	font-size: $font-size-html;
+	line-height: $line-height-html;
+}
+
+body {
+	color: $color-body;
+	@include font-rem(16);
+	font-family: $font-body;
+}
+
+h1 {
+	color: $color-h1;
+	margin-bottom: $margin-bottom-h1;
+	font-family: $font-h1;
+	font-weight: $font-weight-h1;
+	line-height: $line-height-h1;
+	text-align: $text-align-h1;
+	text-transform: $text-transform-h1;
+	@include font-em($font-size-h1);
+	@include mobile() {
+		margin: 0 0 10px 0;
+	}
+
+}
+h2 {
+	margin-bottom: $margin-bottom-h2;
+	color: $color-h2;
+	font-family: $font-h2;
+	font-weight: $font-weight-h2;
+	line-height: $line-height-h2;
+	text-align: $text-align-h2;
+	text-transform: $text-transform-h2;
+	@include font-em($font-size-h2);
+}
+h3 {
+	margin-bottom: $margin-bottom-h3;
+	color: $color-h3;
+	font-family: $font-h3;
+	font-weight: $font-weight-h3;
+	line-height: $line-height-h3;
+	text-align: $text-align-h3;
+	text-transform: $text-transform-h3;
+	@include font-em($font-size-h3);
+}
+h4 {
+	margin-bottom: $margin-bottom-h4;
+	color: $color-h4;
+	font-family: $font-h4;
+	font-weight: $font-weight-h4;
+	line-height: $line-height-h4;
+	text-align: $text-align-h4;
+	text-transform: $text-transform-h4;
+	@include font-em($font-size-h4);
+}
+
+h5 {
+	margin-bottom: $margin-bottom-h5;
+	color: $color-h5;
+	font-family: $font-h5;
+	font-weight: $font-weight-h5;
+	line-height: $line-height-h5;
+	text-align: $text-align-h5;
+	text-transform: $text-transform-h5;
+	@include font-em($font-size-h5);
+}
+
+h6 {
+	margin-bottom: $margin-bottom-h6;
+	color: $color-h6;
+	font-family: $font-h5;
+	font-weight: $font-weight-h6;
+	text-align: $text-align-h6;
+	text-transform: $text-transform-h6;
+	@include font-em($font-size-h6);
+}
+
+p {
+	margin-bottom: $margin-bottom-p;
+	color: $color-p;
+	font-weight: $font-weight-p;
+	line-height: $line-height-p;
+	text-align: $text-align-p;
+	text-transform: $text-transform-p;
+	@include font-em($font-size-p);
+	@include font-smoothing();
+}
+
+a {
+	color: $color-a;
+	font-family: $font-a;
+	text-decoration: $text-decoration-a;
+	@include font-em($font-size-a);
+	&:link{
+		-webkit-tap-highlight-color: transparent;
+	}
+	ins{
+		background-color: transparent;
+		color: $color-a;
+		text-decoration: $text-decoration-a;
+	}
+	&:hover{
+		color: $color-a-hover;
+	}
+}
+
+ul {
+	list-style: $list-style-ul ;
+	margin: $margin-ul;
+	nav & { // emove styling for nav ul's
+		list-style: $list-style-nav-ul;
+		margin: $margin-ul-nav ;
+		a { text-decoration: $text-decoration-nav-a; }
+	}
+}
+
+ol {
+	list-style: $list-style-ol ;
+	margin: $margin-ol;
+	li { margin: $margin-ol-li; }
+	ol { list-style: $list-style-ol-ol ; }
+}
+
+blockquote {
+	margin-bottom: $margin-bottom-blockquote;
+	@include font-em($font-size-blockquote);
+}
+
+select,
+input,
+textarea{
+	color: $color-inputs;
+}
+
+pre {
+	line-height: 1.6;
+	@include font-em(16);
+}
+
+.#{$font-awesome-class} {
+	position: relative;
+	padding-left: 12%;
+	vertical-align: top;
+	@include font-smoothing();
+	&:before {
+		font-family: 'FontAwesome';
+		position: absolute;
+		left: 2%;
+		color: $color-font-awesome;
+		transition: all .2s;
+	}
+}

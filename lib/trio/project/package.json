@@ -1,0 +1,39 @@
+{
+  "name"        : "Gulpify",
+  "version"     : "1.0.0",
+  "description" : "",
+  "main"        : "gulpfile.js",
+  "dependencies": {
+    "autoprefixer"         : "^6.0.3",
+    "convert-source-map"   : "^1.1.1",
+    "cross-spawn-async"    : "^2.0.0",
+    "dargs"                : "^4.0.1",
+    "each-async"           : "^1.1.1",
+    "escape-string-regexp" : "^1.0.3",
+    "glob"                 : "^5.0.15",
+    "glob2base"            : "^0.0.12",
+    "gulp"                 : "^3.9.0",
+    "gulp-autoprefixer"    : "^3.1.0",
+    "gulp-compass"         : "^2.1.0",
+    "gulp-include"         : "^2.0.3",
+    "gulp-notify"          : "^2.2.0",
+    "gulp-livereload"      : "^3.8.1",
+    "gulp-postcss"         : "^6.0.1",
+    "gulp-sass"            : "^2.0.4",
+    "gulp-sass-glob"       : "^0.0.2",
+    "gulp-util"            : "^3.0.7",
+    "md5-hex"              : "^1.1.0",
+    "object-assign"        : "^4.0.1",
+    "os-tmpdir"            : "^1.0.1",
+    "path-exists"          : "^2.0.0",
+    "postcss-clearfix"     : "^0.2.0",
+    "postcss-sprites"      : "^2.0.1",
+    "rimraf"               : "^2.4.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author"  : "",
+  "license" : "ISC"
+}

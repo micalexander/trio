@@ -1,0 +1,587 @@
+@import "variables";
+/*
+HTML5 Reset ::style.css - via https://github.com/murtaugh/HTML5-Reset/blob/master/_/css/style.css
+-------------------------------------------------------------------------------
+
+We have learned much from/been inspired by/taken code where offered from:Eric Meyer ::http://ericmeyer.com
+HTML5 Doctor ::http://html5doctor.com
+and the HTML5 Boilerplate ::http://html5boilerplate.com
+
+-------------------------------------------------------------------------------
+ Table of Contents
+-------------------------------------------------------------------------------
+
+01: Resets      - line :16
+02: Mixins      - line :326
+03: Squishygrid - line :461
+
+-------------------------------------------------------------------------------
+ Resets: Let's default this puppy out
+-------------------------------------------------------------------------------
+*/
+
+html {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font-style: normal;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font-style: normal;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
+  div {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    font-style: normal;
+    font-weight: normal;
+    vertical-align: baseline;
+    background: transparent;
+  }
+}
+
+span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font-style: normal;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+article, aside, figure, footer, header, hgroup, img, nav, section {
+  display: block;
+}
+
+/* Responsive images and other embedded objects
+Note:keeping IMG here will cause problems if you're using foreground images as sprites.
+If this default setting for images is causing issues,you might want to replace it with a .responsive class instead. */
+
+img, object, embed {
+  max-width: 100%;
+  height: auto;
+}
+
+/* force a vertical scrollbar to prevent a jumpy page */
+
+html {
+  overflow-y: scroll;
+}
+
+/* we use a lot of ULs that aren't bulleted.
+don't forget to restore the bullets within content. */
+
+ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote {
+  &:before, &:after {
+    content: '';
+    content: none;
+  }
+}
+
+q {
+  &:before, &:after {
+    content: '';
+    content: none;
+  }
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted #000;
+  cursor: help;
+}
+
+/* tables still need cellspacing="0" in the markup */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th {
+  font-weight: bold;
+  vertical-align: bottom;
+}
+
+td {
+  font-weight: normal;
+  vertical-align: top;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+pre {
+  white-space: pre;
+  /* CSS2 */
+  white-space: pre-wrap;
+  /* CSS 2.1 */
+  white-space: pre-line;
+  /* CSS 3 (and 2.1 as well,actually) */
+  word-wrap: break-word;
+  /* IE */
+}
+
+input {
+  &[type="radio"] {
+    vertical-align: text-bottom;
+  }
+  &[type="checkbox"] {
+    vertical-align: bottom;
+    *vertical-align: baseline;
+  }
+}
+
+textarea, input, select, button {
+  outline: none;
+}
+
+.ie6 input {
+  vertical-align: text-bottom;
+}
+
+select, input, textarea {
+  font: 99% sans-serif;
+}
+
+table {
+  font-size: inherit;
+  font: 100%;
+}
+
+/* Accessible focus treatment
+people.opera.com/patrickl/experiments/keyboard/test */
+
+a {
+  &:hover, &:active {
+    outline: none;
+  }
+}
+
+small {
+  font-size: 85%;
+}
+
+em, i {
+  font-style: italic;
+}
+
+strong, th, b {
+  font-weight: bold;
+}
+
+td {
+  vertical-align: top;
+  img {
+    vertical-align: top;
+  }
+}
+
+/* Make sure sup and sub don't screw with your line-heights
+gist.github.com/413930 */
+
+sub {
+  font-size: 60%;
+  line-height: 0;
+  position: relative;
+}
+
+sup {
+  font-size: 60%;
+  line-height: 0;
+  position: relative;
+  top: -0.75em;
+}
+
+sub {
+  bottom: -0.5em;
+}
+
+/* standardize any monospaced elements */
+
+pre, code, kbd, samp {
+  font-family: monospace,sans-serif;
+}
+
+/* hand cursor on clickable elements */
+
+.clickable, label {
+  cursor: pointer;
+}
+
+input {
+  &[type=button], &[type=submit] {
+    cursor: pointer;
+  }
+}
+
+button {
+  cursor: pointer;
+  margin: 0;
+}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+
+input, select, textarea {
+  margin: 0;
+}
+
+/* make buttons play nice in IE */
+
+button {
+  width: auto;
+  overflow: visible;
+}
+
+/* scale images in IE7 more attractively */
+
+.lt-ie8 img {
+  -ms-interpolation-mode: bicubic;
+}
+
+/* prevent BG image flicker upon hover */
+
+.lt-ie7 html {
+  filter: expression(document.execCommand("BackgroundImageCache",false,true));
+}
+
+/* let's clear some floats */
+
+.clearfix {
+  &:before {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  &:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+    clear: both;
+  }
+  zoom: 1;
+}
+/* gotta use border-box */
+
+* { box-sizing: border-box; }
+
+// /* iOS fixes */
+html { -webkit-text-size-adjust: none; }
+input[type=submit] { -webkit-appearance: none; -moz-appearance: none; }
+
+/* Media Queries for determining javascript events, via http://adactio.com/journal/5429/ */
+body:after { content: 'mobile'; position: fixed; height: 0; visibility: hidden; z-index: -999999}
+@media only screen and (min-width: $width-tablet) and (max-width: $width-desktop - 1px) {
+  body:after { content: 'tablet'; position: fixed; height: 0; visibility: hidden; z-index: -999999}
+}
+@media only screen and (min-width: $width-desktop) {
+  body:after { content: 'desktop'; position: fixed; height: 0; visibility: hidden; z-index: -999999}
+}
+
+/*
+-------------------------------------------------------------------------------
+ Mixins
+-------------------------------------------------------------------------------
+*/
+
+// media query
+@mixin at($min: null, $max: null, $unit: null) {
+
+  @if $unit == null {
+    $unit: em;
+  }
+  @if $max != null {
+    @media (min-width: $min / 16 + $unit) and (max-width: $max /16 + $unit)  { @content; }
+  }
+  @else {
+    $unit: em;
+    @media (min-width: ($min / 16) + $unit)  { @content; }
+  }
+}
+
+@mixin mobile($operator: eq)  {
+
+  @if $operator == gt {
+    @media (min-width: $width-tablet + 'px') { @content; }
+  }
+  @else if ( $operator == eq ) {
+    @media (max-width: $width-tablet - 1 + 'px'){ @content; }
+  }
+}
+
+@mixin tablet($operator: eq) {
+
+  @if ( $operator == gt ) {
+    @media (min-width: $width-desktop + 'px'){ @content; }
+  }
+  @else if ( $operator == lt ) {
+    @media (max-width: $width-tablet - 1 + 'px'){ @content; }
+  }
+  @else if ( $operator == eq ) {
+    @media (min-width: $width-tablet + 'px') and (max-width: $width-desktop - 1  + 'px') { @content; }
+  }
+  @else if ( $operator == ge ) {
+    @media (min-width: $width-tablet + 'px'){ @content; }
+  }
+  @else if ( $operator == le ) {
+    @media (max-width: $width-tablet - 1 + 'px'){ @content; }
+  }
+}
+
+@mixin desktop($operator: eq) {
+
+  @if ( $operator == lt ) {
+    @media (max-width: $width-desktop - 1 + 'px'){ @content; }
+  }
+  @else if  ( $operator == eq ) {
+    @media (min-width: $width-desktop + 'px') { @content; }
+  }
+}
+
+@mixin font-rem($size) {
+  font-size: $size + px;
+  font-size: ($size / 10) + rem;
+}
+@mixin font-em($size){
+  font-size: $size + px;
+  font-size: ($size / 1.6)/ 10 + em;
+}
+
+// input placeholers
+@mixin input-placeholder() {
+  ::-webkit-input-placeholder { @content; }
+  :-moz-placeholder { @content; }
+  ::-moz-placeholder { @content; }
+  :-ms-input-placeholder { @content; }
+}
+
+// custom text selection treatment, developed from http://stackoverflow.com/a/10372599/136018
+@mixin selection($color, $background) {
+  $prefixes: ("-webkit-","-moz-", "-o-", "");
+    @each $prefix in $prefixes {
+        ::#{$prefix}selection {
+            color: $color;
+            background: $background;
+            text-shadow:none; // remove any text shadows:twitter.com/miketaylr/status/12228805301)
+        }
+    }
+    /* j.mp/webkit-tap-highlight-color */
+  a:link{-webkit-tap-highlight-color:$background;}
+  ins{background-color:$background;color:$color;text-decoration:none;}
+}
+
+// control font-smoothing
+@mixin font-smoothing($value: on) {
+    @if $value == on {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    @else {
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: auto;
+    }
+}
+
+// inline-block the right way
+@mixin inline-block($percent: auto) {
+  display: inline-block;
+  width: $percent;
+  padding-right: 2%;
+  box-sizing: border-box;
+  vertical-align: top;
+  zoom: 1;
+
+  .lt-ie8 & {
+    display: inline;
+  }
+
+  &.last {
+    padding-right: 0;
+  }
+}
+
+// remove ul styling
+@mixin ul-reset {
+  list-style: none;
+  margin: 0;
+  padding-bottom: 0;
+}
+
+@mixin areas-text-style-nav {
+  font-size: .875em;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+}
+
+@mixin hyphenate {
+  -ms-word-break: break-all;
+  word-break: break-all;
+  // Non standard for webkit
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
+@mixin trans-fade-hidden {
+  @include transition(opacity $speed linear 0ms, visibility $speed linear 0ms);
+  visibility: hidden;
+  opacity: 0;
+}
+
+@mixin trans-fade-visible {
+  visibility: visible;
+  opacity: 1;
+}
+.no-mobile {
+  display: none;
+  @include at(768) {
+    display: inherit;
+  }
+}
+.no-tablet {
+  display: none;
+  @include at($width-desktop) {
+    display: inherit;
+  }
+}
+
+/* -------------------------------------------------
+** Squishygrid Sass Mixins
+** ---------------------------------------------- */
+
+
+@mixin grid($gutters: null) {
+
+  $grid_gutters: $grid_gutters;
+
+  @if ($gutters != null) {
+    $grid_gutters: $gutters;
+  }
+
+  @if $grid_gutters == 0 {
+    width: 100%;
+    margin-left: 0;
+  }
+  @else {
+    width: 100 + $grid_gutters;
+    margin-left: -$grid_gutters;
+    > * {
+      margin-left: $grid_gutters;
+    }
+  }
+}
+
+@mixin span($span: null, $columns: null, $gutters: null, $breakpoint: null) {
+
+  display: inline-block;
+  vertical-align: top;
+  *zoom: 1;
+  overflow: hidden;
+  *overflow: visible;
+  margin-right: -.273em;
+
+  $grid_columns   : $grid_columns;
+  $grid_gutters   : $grid_gutters;
+  $grid_breakpoint: $grid_breakpoint;
+
+  @if ($columns != null) {
+    $grid_columns: $columns;
+  }
+  @if ($span == null) {
+    $span: $grid_columns;
+  }
+  @if $gutters != null {
+    $grid_gutters: $gutters;
+  }
+  @if $breakpoint != null {
+    $grid_breakpoint: $breakpoint;
+  }
+
+  width: 100% - $grid_gutters;
+
+  @media (min-width: ($grid_breakpoint / 16) +  em) {
+    @if $grid_gutters == 0 {
+      width: $span * (100.0% / $grid_columns);
+      margin-left: 0;
+    }
+    @else {
+      width: (100% - ($grid_columns * $grid_gutters)) / $grid_columns * $span + (($span - 1) * $grid_gutters);
+      margin-left: $grid_gutters;
+    }
+  }
+}
+
+@mixin offset($offset: 0, $columns: null, $gutters: null, $breakpoint: null) {
+
+  $grid_columns   : $grid_columns;
+  $grid_gutters   : $grid_gutters;
+  $grid_breakpoint: $grid_breakpoint;
+
+  @if ($columns != null) {
+    $grid_columns: $columns;
+  }
+
+  @if $gutters != null {
+    $grid_gutters: $gutters;
+  }
+
+  @if $breakpoint != null {
+    $grid_breakpoint: $breakpoint;
+  }
+
+  @media (min-width: ($grid_breakpoint / 16) +  em) {
+    margin-left: (100.0 / $grid_columns) * $offset + $grid_gutters;
+  }
+}
+
+@import "typography";

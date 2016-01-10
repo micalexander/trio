@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+APP_ROOT = File.expand_path("../../lib",__FILE__)
+$:.unshift( APP_ROOT )
+
+require 'trio/cli'
+
+Trident::CLI.start
