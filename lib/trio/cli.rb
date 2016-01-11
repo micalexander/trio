@@ -28,12 +28,23 @@ module Trident
 
             gsub_file 'config.rb',   /(')(img|css|js)(')/,  '\1trio/\2\3'  unless !File.exists? 'config.rb'
 
+            [
+              /\s*activate\s:external_pipeline*/,
+              /\s*name:\s.*gulp.*/,
+              /\s*command:\s.*gulp.*/,
+              /\s*source:\s.*tmp\/dist.*/
+            ].each do |line|
+
+              uncomment_lines 'config.rb', line
+
+            end
+
             run 'npm install' unless !File.exists? 'package.json'
 
           elsif options[:wordpress]
 
-            theme_path   = File.join('wp-content', 'themes', options[:wordpress])
-            trio_path = File.join(theme_path , 'trio')
+            theme_path = File.join('wp-content', 'themes', options[:wordpress])
+            trio_path  = File.join(theme_path , 'trio')
 
             if File.directory?(theme_path)
 
