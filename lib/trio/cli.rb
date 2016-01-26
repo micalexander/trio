@@ -1,11 +1,11 @@
 require 'Thor'
 require 'trio/helpers'
 
-module Trident
+module Trio
   class CLI < Thor
     include Thor::Actions
-    include Trident::GetCurrentDirectoryBasename
-    include Trident::ProjectExist
+    include Trio::GetCurrentDirectoryBasename
+    include Trio::ProjectExist
 
     desc "init [option]", "Initialize trio"
 
@@ -87,7 +87,7 @@ module Trident
         end
       else
         puts ""
-        puts "Trident: This project already contains a trio folder. Please try again."
+        puts "Trio: This project already contains a trio folder. Please try again."
         puts ""
         exit
       end

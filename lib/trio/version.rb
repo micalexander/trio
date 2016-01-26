@@ -1,3 +1,3 @@
-module Trident
-  VERSION = '1.1.0'
+module Trio
+  VERSION = '1.1.1'
 end

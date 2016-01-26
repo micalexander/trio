@@ -5,4 +5,4 @@ $:.unshift( APP_ROOT )
 
 require 'trio/cli'
 
-Trident::CLI.start
+Trio::CLI.start

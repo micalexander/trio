@@ -1,7 +1,7 @@
 require 'pathname'
 
 # get current working directory basename
-module Trident
+module Trio
   module GetCurrentDirectoryBasename
     def get_current_directory_basename(project_name)
       case project_name
@@ -15,7 +15,7 @@ module Trident
 end
 
 # see if project exist
-module Trident
+module Trio
   module ProjectExist
     def project?(project)
       if !File.directory?( project )
