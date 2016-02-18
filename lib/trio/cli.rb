@@ -48,13 +48,13 @@ module Trio
 
             if File.directory?(theme_path)
 
-              self.add_trio trio_path '.'
+              self.add_trio trio_path, '.'
 
               gsub_file 'gulpfile.js', /'trio'/, trio_path unless !File.exists? 'gulpfile.js'
 
               inside trio_path do
 
-                ['css', 'js', 'sass',].each do |dir|
+                ['css', 'js', 'sass'].each do |dir|
 
                   remove_dir(dir)
 
