@@ -21,12 +21,17 @@ Included:
 #### Middleman
 
 In the root of our middleman project run:
-  `trio init`
+  `trio init -m `
   
 #### Wordpress
 
 After you install your desired theme. In the root of our wordpress project run:
-  `trio init [theme-folder-name]`
+  `trio init -w [theme-folder-name]`
+  
+#### Other
+
+After you install your desired theme. In the root of our wordpress project run:
+  `trio init
   
 ### Output Folder Structure
 Work out of the folders prefixed with an underscore and serve the other folders to the browser.
