@@ -5,8 +5,8 @@ Gem::Specification.new do |s|
     s.name         = 'trio'
     s.version      = Trio::VERSION
     s.platform      = Gem::Platform::RUBY
-    s.summary      = "Trio is a all-in-one WordPress development tool"
-    s.description  = "Trio is a all-in-one tool designed to make project management, WordPress development, MySQL database backups and syncing MySQL databases between multi-environments a breeze."
+    s.summary      = "This gem provides a pretty opinionated folder structure and build system for Middleman and Wordpress as well."
+    s.description  = "This gem provides a pretty opinionated folder structure and build system for Middleman and Wordpress as well."
     s.authors      = ["Mic Alexander"]
     s.email        = 'michael@micalexander.com'
     s.files        = Dir['lib/   *.rb']
