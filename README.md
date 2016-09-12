@@ -29,6 +29,7 @@ After you install your desired theme. In the root of our wordpress project run:
   `trio init [theme-folder-name]`
   
 ### Output Folder Structure
+Work out of the folders prefixed with an underscore and serve the other folders to the browser.
 
 ```
   trio
