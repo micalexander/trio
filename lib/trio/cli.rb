@@ -1,4 +1,4 @@
-require 'Thor'
+require 'thor'
 require 'trio/helpers'
 
 module Trio
