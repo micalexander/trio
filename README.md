@@ -6,17 +6,15 @@ This gem provides a pretty opinionated folder structure and build system for Mid
 - Ruby (duh, being that its a ruby gem and all)
 - Node
 
-Included:
-- Guilp
-
 ### Installation
 
-- Download gem to your desktop and unzip it.
-- From within your terminal cd into the directory of the unzipped gem.
-- Run `gem build trio.gemspec`.
 - Run `gem install trio`. 
 
 ### Usage
+
+trio needs gulp-cli intalled globally with node in order for it to work.
+
+`npm install gulp-cli -g`
 
 #### Middleman
 
