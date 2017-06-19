@@ -24,7 +24,7 @@ module Trio
 
           self.add_trio trio_path, File.join('.')
 
-          gsub_file 'gulpfile.js', /trio/,  trio_path  unless !File.exists? 'gulpfile.js'
+          gsub_file 'gulpfile.js', /{{ trio }}/,  trio_path  unless !File.exists? 'gulpfile.js'
 
           gsub_file 'config.rb',   /(')(img|css|js)(')/,  '\1trio/\2\3'  unless !File.exists? 'config.rb'
 
@@ -54,7 +54,7 @@ module Trio
 
             self.add_trio trio_path, '.'
 
-            gsub_file 'gulpfile.js', /'trio'/, trio_path unless !File.exists? 'gulpfile.js'
+            gsub_file 'gulpfile.js', /{{ trio }}/, trio_path unless !File.exists? 'gulpfile.js'
 
             inside trio_path do
 
