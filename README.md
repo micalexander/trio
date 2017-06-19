@@ -36,11 +36,13 @@ Work out of the folders prefixed with an underscore and serve the other folders 
 
 ```
   trio
-    | # input
+    |
+    | # input directories
     |--_images
     |--_sass
     |--_scripts
-    | # output
+    |
+    | # output directories
     |--css
     |--img
     |--js
