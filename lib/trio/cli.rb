@@ -78,6 +78,7 @@ module Trio
 
         self.add_trio trio_path, '.'
 
+        gsub_file 'gulpfile.js', /{{ trio }}/, trio_path unless !File.exists? 'gulpfile.js'
       else
 
         self.show_message 'trio_options', 'red'
